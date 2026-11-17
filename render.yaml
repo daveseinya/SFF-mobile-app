@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: sff-gala-competition
+    runtime: node
+    plan: 0.5c-512mb
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    disk:
+      name: sff-gala-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 24.22.1
+      - key: NODE_ENV
+        value: production
+      - key: SFF_HOST
+        value: 0.0.0.0
+      - key: SFF_DATABASE_PATH
+        value: /var/data/sff-members.sqlite
+      - key: SFF_ADMIN_PASSWORD
+        sync: false

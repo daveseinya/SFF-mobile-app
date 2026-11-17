@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#153b68">
+    <title>SFF Registration Approval</title>
+    <link rel="icon" type="image/png" href="app-icon-192.png">
+    <link rel="stylesheet" href="styles.css?v=13">
+    <script src="admin.js?v=2" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Saturday Football Family home">
+          <img class="brand-mark" src="sff-logo.png" alt="" aria-hidden="true">
+          <span class="brand-copy">
+            <strong>Saturday Football Family</strong>
+            <span>Registration approval</span>
+          </span>
+        </a>
+        <a class="top-link" href="/">Return to app <span aria-hidden="true">↗</span></a>
+      </header>
+      <main class="content-panel">
+        <section class="page-heading" aria-labelledby="admin-title">
+          <p class="eyebrow eyebrow-dark">SFF ORGANIZERS</p>
+          <h1 id="admin-title">Registration Approval</h1>
+          <p>Review each player and Gala registration. Approved registrations unlock member access.</p>
+        </section>
+        <p id="admin-status" class="form-status" role="status" aria-live="polite"></p>
+        <form id="admin-login-form" class="registration-form">
+          <section class="form-card">
+            <h2>Organizer sign-in</h2>
+            <label class="field">
+              <span>Organizer password</span>
+              <input name="password" type="password" autocomplete="current-password" required>
+            </label>
+            <button class="button button-accent" type="submit">Sign in</button>
+          </section>
+        </form>
+        <section id="admin-dashboard" class="form-card" hidden>
+          <section aria-labelledby="registration-queue-title">
+            <div class="form-section-heading">
+              <div>
+                <h2 id="registration-queue-title">Player registration approvals</h2>
+                <p>Approve or reject each player separately. Approval unlocks member features at next refresh.</p>
+              </div>
+              <button id="admin-logout" class="button button-outline" type="button">Sign out</button>
+            </div>
+            <div id="registration-list" class="registration-list" aria-live="polite"></div>
+          </section>
+
+          <section class="admin-management-section" aria-labelledby="team-management-title">
+            <div class="form-section-heading">
+              <div>
+                <h2 id="team-management-title">Manage teams</h2>
+                <p>Rename teams or remove them from new registrations. Existing records remain; update the Jotform team choices after adding or renaming a team.</p>
+              </div>
+            </div>
+            <form id="team-add-form" class="admin-team-add">
+              <label class="field">
+                <span>New team name</span>
+                <input name="name" type="text" maxlength="60" required>
+              </label>
+              <button class="button button-primary" type="submit">Add team</button>
+            </form>
+            <div id="admin-team-list" class="registration-list" aria-live="polite"></div>
+          </section>
+
+          <section class="admin-management-section" aria-labelledby="competition-editor-title">
+            <div class="form-section-heading">
+              <div>
+                <h2 id="competition-editor-title">Competition details</h2>
+                <p>Saved details are shown in the approved-members Competition screen.</p>
+              </div>
+            </div>
+            <form id="competition-form" class="registration-form">
+              <div class="field-grid">
+                <label class="field field-wide">
+                  <span>Competition title</span>
+                  <input name="title" type="text" maxlength="120" required>
+                </label>
+                <label class="field field-wide">
+                  <span>Description</span>
+                  <textarea name="description" rows="3" maxlength="1000"></textarea>
+                </label>
+                <label class="field field-wide">
+                  <span>Date and schedule</span>
+                  <textarea name="dateSchedule" rows="2" maxlength="300"></textarea>
+                </label>
+                <label class="field">
+                  <span>Venue</span>
+                  <input name="venue" type="text" maxlength="200">
+                </label>
+                <fieldset class="field field-wide admin-format-options">
+                  <legend>Match formats</legend>
+                  <label><input type="checkbox" name="matchFormats" value="Full Field Competition"> Full Field Competition</label>
+                  <label><input type="checkbox" name="matchFormats" value="Six aside Competition"> Six aside Competition</label>
+                </fieldset>
+                <label class="field field-wide">
+                  <span>Points system</span>
+                  <input name="pointsSystem" type="text" maxlength="200">
+                </label>
+                <label class="field field-wide">
+                  <span>Announcements</span>
+                  <textarea name="announcements" rows="3" maxlength="1000"></textarea>
+                </label>
+              </div>
+              <button class="button button-primary" type="submit">Save competition details</button>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

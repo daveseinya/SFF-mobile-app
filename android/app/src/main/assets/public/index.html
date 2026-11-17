@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#153b68">
+    <meta name="description" content="Saturday Football Family Gala Competition team registration and event information.">
+    <meta name="sff-api-base-url" content="">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Saturday Football Family | Gala Competition</title>
+    <link rel="icon" type="image/png" href="app-icon-192.png">
+    <link rel="apple-touch-icon" href="app-icon-192.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css?v=13">
+    <script src="app.js?v=12" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" data-screen="home" aria-label="Saturday Football Family home">
+          <img class="brand-mark" src="sff-logo.png" alt="" aria-hidden="true">
+          <span class="brand-copy">
+            <strong>Saturday Football Family</strong>
+            <span>Gala Competition</span>
+          </span>
+        </a>
+        <a class="top-link" href="#apply" data-screen="apply">Team registration <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" data-screen="home" aria-current="page"><span aria-hidden="true">⌂</span> Home</a>
+        <a href="#membership" data-screen="membership"><span aria-hidden="true">♙</span> Account</a>
+        <a href="#apply" data-screen="apply"><span aria-hidden="true">＋</span> Register</a>
+        <a href="#competition" data-screen="competition"><span aria-hidden="true">▤</span> Competition</a>
+        <a href="#guide" data-screen="guide"><span aria-hidden="true">☷</span> Event guide</a>
+      </nav>
+
+      <main id="main-content">
+        <section class="screen" id="home" aria-labelledby="home-title">
+          <div class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow"><span class="live-dot"></span> SFF COMMUNITY EVENT</p>
+              <h1 id="home-title" tabindex="-1">Bring your team.<br><span>Make it a Saturday.</span></h1>
+              <p class="hero-description">The Gala Competition brings our football family together. A team coordinator can register the team roster together, with an individual account and approval for every player.</p>
+              <a class="button button-accent" href="#apply" data-screen="apply">Register a team <span aria-hidden="true">→</span></a>
+              <p class="hero-note">Every player stays pending until an organizer approves their account.</p>
+            </div>
+            <div class="pitch-art" aria-hidden="true">
+              <div class="pitch-line pitch-midline"></div>
+              <div class="pitch-circle"></div>
+              <div class="pitch-box pitch-box-left"></div>
+              <div class="pitch-box pitch-box-right"></div>
+              <div class="pitch-ball" aria-hidden="true">
+                <img src="sff-logo.png" alt="">
+              </div>
+              <span class="pitch-label">GALA<br>COMPETITION</span>
+            </div>
+            <span class="hero-number" aria-hidden="true">01</span>
+          </div>
+
+          <section class="intro-section" aria-labelledby="welcome-title">
+            <div class="section-heading">
+              <p class="eyebrow eyebrow-dark">WELCOME, FAMILY</p>
+              <h2 id="welcome-title">Football is better together.</h2>
+              <p>Register a team roster together. Each player gets a personal login, SFF ID, and individual organizer approval.</p>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">01</span>
+                <h3>Team roster registration</h3>
+                <p>Submit coordinator and multiple player details together.</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">02</span>
+                <h3>Choose your role</h3>
+                <p>Select Attacker, Midfielder, Defender or Goalkeeper.</p>
+              </article>
+              <article class="feature-card">
+                <span class="feature-icon" aria-hidden="true">03</span>
+                <h3>Organizer approval</h3>
+                <p>Your account unlocks app features only after approval.</p>
+              </article>
+              <article class="feature-card membership-feature-card">
+                <span class="feature-icon" aria-hidden="true">04</span>
+                <h3>Individual player accounts</h3>
+                <p>Each player receives a unique SFF ID and must be approved separately.</p>
+                <a class="feature-link" href="#apply" data-screen="apply">Register a team <span aria-hidden="true">→</span></a>
+              </article>
+            </div>
+            <section class="team-information" aria-labelledby="team-information-title">
+              <p class="eyebrow eyebrow-dark">GALA COMPETITION</p>
+              <h2 id="team-information-title">Team Information</h2>
+              <ol id="home-team-list" class="team-list"></ol>
+            </section>
+          </section>
+
+          <aside class="callout">
+            <span class="callout-ball" aria-hidden="true">⚽</span>
+            <div>
+              <strong>Ready to represent your team?</strong>
+              <p>Have your team and coordinator details, plus each player’s login information, ready before you begin.</p>
+            </div>
+            <a href="#apply" data-screen="apply" aria-label="Open team registration">Register <span aria-hidden="true">→</span></a>
+          </aside>
+        </section>
+
+        <section class="screen" id="membership" aria-labelledby="membership-title" hidden>
+          <div class="page-heading">
+            <p class="eyebrow eyebrow-dark">MEMBER ACCESS</p>
+            <h1 id="membership-title" tabindex="-1">Your SFF account</h1>
+            <p>New registrations remain pending until an organizer approves them. Approved members can use all app features.</p>
+          </div>
+          <p id="member-status-message" class="form-status" role="status" aria-live="polite">Checking your account status…</p>
+          <div id="member-session-card" class="form-card" hidden>
+            <img id="member-photo" class="member-photo" alt="Player profile" hidden>
+            <h2 id="member-name"></h2>
+            <p>SFF membership ID: <strong id="member-id"></strong></p>
+            <p id="member-approval"></p>
+            <button id="member-logout" class="button button-outline" type="button">Sign out</button>
+          </div>
+          <form id="member-login-form" class="registration-form">
+            <section class="form-card">
+              <div class="form-section-heading">
+                <div>
+                  <h2>Sign in</h2>
+                  <p>Use the email and password from your player registration.</p>
+                </div>
+              </div>
+              <div class="field-grid">
+                <label class="field">
+                  <span>Email address</span>
+                  <input name="email" type="email" autocomplete="email" required>
+                </label>
+                <label class="field">
+                  <span>Password</span>
+                  <input name="password" type="password" autocomplete="current-password" required>
+                </label>
+              </div>
+              <button class="button button-accent" type="submit">Sign in</button>
+              <a class="text-link" href="#apply" data-screen="apply">Register a player instead</a>
+            </section>
+          </form>
+          <p id="member-error" class="form-status is-error" role="alert" hidden></p>
+          <p class="admin-link"><a href="admin.html">Registration approval dashboard</a></p>
+        </section>
+
+        <section class="screen" id="apply" aria-labelledby="apply-title" hidden>
+          <div class="page-heading">
+            <p class="eyebrow eyebrow-dark">TEAM + PLAYER REGISTRATION</p>
+            <h1 id="apply-title" tabindex="-1">Team registration</h1>
+            <p>Select a team, enter its coordinator details, and add each player. Every player receives a separate SFF ID, login, and approval decision.</p>
+          </div>
+          <div class="form-toolbar">
+            <div id="registration-status" class="form-status" role="status" aria-live="polite">Team and player registrations are reviewed in the organizer dashboard.</div>
+            <a class="text-link" href="#membership" data-screen="membership">Already registered? Sign in <span aria-hidden="true">↗</span></a>
+          </div>
+          <form
+            id="gala-registration-form"
+            class="registration-form"
+            action="https://submit.jotform.com/submit/263143577200047"
+            method="post"
+            target="_blank"
+            accept-charset="utf-8">
+            <input type="hidden" name="formID" value="263143577200047">
+            <input type="hidden" name="simple_spc" value="263143577200047-263143577200047">
+            <input type="hidden" name="q9_q9_number7" id="player-count">
+            <textarea name="q10_q10_textarea8" id="player-list-data" hidden></textarea>
+            <input type="hidden" name="q17_q17_dropdown15" value="Cash due">
+            <input type="hidden" name="q21_q21_datetime19[month]" id="submission-month">
+            <input type="hidden" name="q21_q21_datetime19[day]" id="submission-day">
+            <input type="hidden" name="q21_q21_datetime19[year]" id="submission-year">
+            <input type="hidden" name="q23_q23_dropdown21" value="Awaiting review">
+
+            <section class="form-card" aria-labelledby="team-details-title">
+              <div class="form-section-heading">
+                <span class="form-step">01</span>
+                <div>
+                  <h2 id="team-details-title">Team and coordinator</h2>
+                  <p>Coach or coordinator contact details</p>
+                </div>
+              </div>
+              <div class="field-grid">
+                <label class="field">
+                  <span>Team name <span class="required-mark">*</span></span>
+                  <select name="q3_q3_dropdown1" required>
+                    <option value="">Choose your team</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Coach / coordinator name <span class="required-mark">*</span></span>
+                  <input name="q4_q4_textbox2" type="text" autocomplete="name" required>
+                </label>
+                <label class="field">
+                  <span>Coach SFF membership ID <span class="required-mark">*</span></span>
+                  <input name="q5_q5_textbox3" type="text" placeholder="SFF/0002" pattern="SFF/[0-9]+" title="Use the SFF membership ID from the registration form" autocapitalize="characters" required>
+                </label>
+                <label class="field">
+                  <span>Contact phone <span class="required-mark">*</span></span>
+                  <input name="q29_contactPhone" type="tel" autocomplete="tel" placeholder="e.g. 076 123 456" required>
+                </label>
+                <label class="field field-wide">
+                  <span>Contact email <span class="required-mark">*</span></span>
+                  <input name="q7_q7_email5" type="email" autocomplete="email" placeholder="you@example.com" required>
+                </label>
+              </div>
+              <p id="team-options-status" class="payment-status-note" role="status"></p>
+            </section>
+
+            <section class="form-card" aria-labelledby="players-title">
+              <div class="form-section-heading">
+                <span class="form-step">02</span>
+                <div>
+                  <h2 id="players-title">Team roster</h2>
+                  <p>Add each player's contact and account details. Passwords are stored securely and never sent to Jotform.</p>
+                </div>
+                <span id="roster-count" class="player-count">1 player</span>
+              </div>
+              <div id="players-list" class="players-list"></div>
+              <p class="player-limit-note" id="player-limit-note" hidden>The roster has reached the maximum of 20 players.</p>
+              <button class="button button-outline" id="add-player" type="button">Add a player</button>
+            </section>
+
+            <section class="form-card" aria-labelledby="competition-title">
+              <div class="form-section-heading">
+                <span class="form-step">03</span>
+                <div>
+                  <h2 id="competition-title">Competition & payment</h2>
+                  <p>Choose your match format and review the team entry amount.</p>
+                </div>
+              </div>
+              <div class="field-grid">
+                <label class="field">
+                  <span>Players composition <span class="required-mark">*</span></span>
+                  <select name="q12_q12_dropdown10" required>
+                    <option value="">Choose composition</option>
+                    <option value="Fully registered SFF members only">Fully registered SFF members only</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Match type <span class="required-mark">*</span></span>
+                  <select name="q13_q13_dropdown11" required>
+                    <option value="">Choose match type</option>
+                    <option value="Full Field Competition">Full Field Competition</option>
+                    <option value="Six aside Competition">Six aside Competition</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Entry fee per player (Le)</span>
+                  <input id="entry-fee" name="q27_entryFee" type="number" min="0" step="any" inputmode="decimal" placeholder="Enter fee if confirmed">
+                </label>
+                <label class="field">
+                  <span>Total amount due (Le)</span>
+                  <input id="total-amount" type="number" readonly placeholder="Calculated from player count">
+                  <input id="total-amount-data" name="q28_totalAmount" type="hidden">
+                </label>
+                <label class="field">
+                  <span>Team payment method <span class="required-mark">*</span></span>
+                  <select name="q16_q16_dropdown14" required>
+                    <option value="">Choose payment method</option>
+                    <option value="Cash">Cash</option>
+                  </select>
+                </label>
+              </div>
+              <p class="payment-status-note">Each player account starts as Pending and must be approved individually. Team payment starts as “Cash due” in Jotform.</p>
+            </section>
+
+            <section class="form-card terms-card" aria-labelledby="terms-title">
+              <div class="form-section-heading">
+                <span class="form-step">04</span>
+                <div>
+                  <h2 id="terms-title">Terms & consent</h2>
+                  <p>Both confirmations are required to submit your application.</p>
+                </div>
+              </div>
+              <label class="consent-item">
+                <input type="checkbox" name="q19_q19_checkbox17[]" value="I acknowledge that participation is at my own risk and the organizers are not liable for injuries or loss." required>
+                <span>I acknowledge that participation is at my own risk and the organizers are not liable for injuries or loss.</span>
+              </label>
+              <label class="consent-item">
+                <input type="checkbox" name="q20_q20_checkbox18[]" value="We as the management of the participating team consent to our players' participation in this event." required>
+                <span>We as the management of the participating team consent to our players' participation in this event.</span>
+              </label>
+            </section>
+
+            <div class="submit-row">
+              <p>Each player stays pending until individually approved. Jotform forwarding depends on its current team and match-format choices.</p>
+              <button class="button button-primary" type="submit">Submit team & players <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+        </section>
+
+        <section class="screen" id="competition" aria-labelledby="competition-page-title" hidden>
+          <div class="page-heading">
+            <p class="eyebrow eyebrow-dark">SFF GALA</p>
+            <h1 id="competition-page-title" tabindex="-1">Competition details</h1>
+            <p id="competition-description">Match results and player statistics entered by the organizers appear in the standings below.</p>
+          </div>
+
+          <div class="competition-overview">
+            <article class="competition-detail">
+              <span class="competition-detail-icon" aria-hidden="true">⚽</span>
+              <div>
+                <h2>Match formats</h2>
+                <div id="competition-match-formats" class="competition-item-list"></div>
+              </div>
+            </article>
+            <article class="competition-detail">
+              <span class="competition-detail-icon" aria-hidden="true">🏆</span>
+              <div>
+                <h2>Teams</h2>
+                <div id="competition-team-list" class="competition-item-list"></div>
+              </div>
+            </article>
+            <article class="competition-detail points-detail">
+              <span class="competition-detail-icon" aria-hidden="true">3</span>
+              <div>
+                <h2>Points system</h2>
+                <p id="competition-points-system">Win 3 · Draw 1 · Loss 0</p>
+              </div>
+            </article>
+            <article id="competition-schedule-card" class="competition-detail" hidden>
+              <span class="competition-detail-icon" aria-hidden="true">◷</span>
+              <div>
+                <h2>Date & schedule</h2>
+                <p id="competition-date-schedule"></p>
+              </div>
+            </article>
+            <article id="competition-venue-card" class="competition-detail" hidden>
+              <span class="competition-detail-icon" aria-hidden="true">⌖</span>
+              <div>
+                <h2>Venue</h2>
+                <p id="competition-venue"></p>
+              </div>
+            </article>
+            <article id="competition-announcements-card" class="competition-detail" hidden>
+              <span class="competition-detail-icon" aria-hidden="true">!</span>
+              <div>
+                <h2>Announcements</h2>
+                <p id="competition-announcements"></p>
+              </div>
+            </article>
+          </div>
+
+          <section class="leaderboard-card" aria-labelledby="standings-title">
+            <div class="leaderboard-heading">
+              <div>
+                <p class="eyebrow eyebrow-dark">TEAM TABLE</p>
+                <h2 id="standings-title">Standings</h2>
+              </div>
+              <span class="leaderboard-caption">Calculated from recorded games</span>
+            </div>
+            <div class="table-scroll">
+              <table class="leaderboard-table">
+                <thead>
+                  <tr><th scope="col">Pos</th><th scope="col">Team</th><th scope="col">P</th><th scope="col">W</th><th scope="col">D</th><th scope="col">L</th><th scope="col">GF</th><th scope="col">GA</th><th scope="col">GD</th><th scope="col">Pts</th></tr>
+                </thead>
+                <tbody id="standings-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="leaderboard-card" aria-labelledby="match-history-title">
+            <div class="leaderboard-heading">
+              <div>
+                <p class="eyebrow eyebrow-dark">MATCH DAY</p>
+                <h2 id="match-history-title">Recorded games</h2>
+              </div>
+              <span class="leaderboard-caption">Latest first</span>
+            </div>
+            <div id="match-results-list" class="match-results-list"></div>
+          </section>
+
+          <section class="leaderboard-card" aria-labelledby="player-leaderboard-title">
+            <div class="leaderboard-heading">
+              <div>
+                <p class="eyebrow eyebrow-dark">PLAYER STATS</p>
+                <h2 id="player-leaderboard-title">Scorers & discipline</h2>
+              </div>
+              <span class="leaderboard-caption">Highest scorer first</span>
+            </div>
+            <div id="top-scorer-banner" class="top-scorer-banner" role="status">No goals recorded yet.</div>
+            <div class="table-scroll">
+              <table class="leaderboard-table player-leaderboard-table">
+                <thead>
+                  <tr><th scope="col">Pos</th><th scope="col">Player / SFF ID</th><th scope="col">Team</th><th scope="col">Goals</th><th scope="col">Assists</th><th scope="col">Yellow cards</th><th scope="col">Red cards</th></tr>
+                </thead>
+                <tbody id="player-stats-body"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="organizer-card" aria-labelledby="record-result-title">
+            <div class="organizer-heading">
+              <div>
+                <p class="eyebrow eyebrow-dark">ORGANIZER TOOLS</p>
+                <h2 id="record-result-title">Record a game</h2>
+                <p>Enter a final score and optional player statistics to update the tables.</p>
+              </div>
+            </div>
+            <p class="results-storage-status" id="results-storage-status" role="status">Results are saved on this device only.</p>
+            <form id="match-result-form" class="match-result-form">
+              <div class="field-grid">
+                <label class="field">
+                  <span>Game date <span class="required-mark">*</span></span>
+                  <input id="match-date" name="date" type="date" required>
+                </label>
+                <label class="field">
+                  <span>Home team <span class="required-mark">*</span></span>
+                  <select id="home-team" name="homeTeam" required></select>
+                </label>
+                <label class="field">
+                  <span>Home score <span class="required-mark">*</span></span>
+                  <input id="home-score" name="homeScore" type="number" min="0" max="99" step="1" required>
+                </label>
+                <label class="field">
+                  <span>Away team <span class="required-mark">*</span></span>
+                  <select id="away-team" name="awayTeam" required></select>
+                </label>
+                <label class="field">
+                  <span>Away score <span class="required-mark">*</span></span>
+                  <input id="away-score" name="awayScore" type="number" min="0" max="99" step="1" required>
+                </label>
+              </div>
+              <div class="match-stats-heading">
+                <div>
+                  <h3>Player statistics</h3>
+                  <p>Add player rows to record goals, assists and cards for this game.</p>
+                </div>
+                <button class="button button-outline" id="add-match-stat" type="button">＋ Add player stats</button>
+              </div>
+              <div id="match-player-stats" class="match-player-stats"></div>
+              <div class="submit-row match-submit-row">
+                <p>Standings use 3 points for a win, 1 for a draw, 0 for a loss. Data stays in this browser.</p>
+                <button class="button button-primary" type="submit">Save game result <span aria-hidden="true">→</span></button>
+              </div>
+            </form>
+          </section>
+        </section>
+
+        <section class="screen" id="guide" aria-labelledby="guide-title" hidden>
+          <div class="page-heading">
+            <p class="eyebrow eyebrow-dark">A QUICK CHECK BEFORE YOU START</p>
+            <h1 id="guide-title" tabindex="-1">Team entry guide</h1>
+            <p>Make the application smoother by getting these details together first.</p>
+          </div>
+          <div class="guide-layout">
+            <article class="guide-card">
+              <span class="guide-number">01</span>
+              <div>
+                <h2>Coach or coordinator</h2>
+                <p>Team name, contact name, phone number and email address. An SFF membership ID is also requested for the coach.</p>
+              </div>
+            </article>
+            <article class="guide-card">
+              <span class="guide-number">02</span>
+              <div>
+                <h2>Player list</h2>
+                <p>Register the player with SFF first, then enter their unique SFF membership ID, name, shirt number and position. The name defaults to the ID and can be edited.</p>
+              </div>
+            </article>
+            <article class="guide-card">
+              <span class="guide-number">03</span>
+              <div>
+                <h2>Competition details</h2>
+                <p>Choose Full Field or Six aside, review the entry fee, and select the team's payment method.</p>
+              </div>
+            </article>
+            <article class="guide-card">
+              <span class="guide-number">04</span>
+              <div>
+                <h2>Team consent</h2>
+                <p>Read and accept the liability waiver and participating team management consent to submit the entry.</p>
+              </div>
+            </article>
+          </div>
+          <div class="guide-actions">
+            <p>Have everything ready? You can start the official application now.</p>
+            <a class="button button-primary" href="#apply" data-screen="apply">Go to application <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <img class="footer-mark" src="sff-logo.png" alt="" aria-hidden="true">
+        <span>Saturday Football Family</span>
+        <span class="footer-separator" aria-hidden="true">·</span>
+        <span>Gala Competition</span>
+      </footer>
+    </div>
+  </body>
+</html>
